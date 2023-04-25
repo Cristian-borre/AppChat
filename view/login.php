@@ -14,17 +14,17 @@
 <body class="vh-100 m-0 row justify-content-center align-items-center">
     <div class="col-auto w-25 h-50 text-center shadow-lg p-5 rounded-5">
         <div class="login">
-            <form action="./entrar">
+            <form action="./entrar" method="post">
                 <div class="head">
                     <h1 class="title m-0 mb-5 p-0">Login</h1>
                 </div>
                 <div class="body">
                     <div class="mb-4 form-floating">
-                        <input type="text" class="form-control" placeholder="Username" id="InputUsername">
+                        <input type="text" class="form-control" placeholder="Username" name="usuario" id="InputUsername">
                         <label for="InputUsername">Username</label>
                     </div>
                     <div class="mb-4 form-floating">
-                        <input type="password" class="form-control" placeholder="Password" id="InputPassword">
+                        <input type="password" class="form-control" placeholder="Password" name="password" id="InputPassword">
                         <label for="InputPassword">Password</label>
                     </div>
                 </div>

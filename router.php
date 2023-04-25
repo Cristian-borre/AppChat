@@ -8,8 +8,8 @@ $router->mount('', function() use ($router){
     $router->get('/login', function(){
         require_once('./view/login.php');
     });
-    $router->get('/entrar', function(){
-        require_once('./view/admin/index.php');
+    $router->post('/entrar', function(){
+        require_once('./controller/LoginController.php');
     });
     $router->get('/registrar', function(){
         require_once('./view/signup.php');
