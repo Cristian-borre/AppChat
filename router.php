@@ -11,6 +11,9 @@ $router->mount('', function() use ($router){
     $router->get('/entrar', function(){
         require_once('./view/admin/index.php');
     });
+    $router->get('/registrar', function(){
+        require_once('./view/signup.php');
+    });
 });
 $router->set404(function() {
     header('HTTP/1.1 404 Not Found');
