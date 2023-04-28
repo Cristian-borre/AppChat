@@ -1,12 +1,17 @@
+a{
+    text-decoration: none !important;
+}
 body{
     background: #f8f8f8 !important;
 }
 .login{
     width: 300px !important;
+    margin-top: 120px !important;
     background: #fff !important;
 }
 .signup{
     width: 350px !important;
+    margin-top: 100px !important;
     background: #fff !important;
 }
 .head{
@@ -19,4 +24,105 @@ body{
     .signup{
         width: auto !important;
     }
+}
+
+/* HOME */
+.header,
+.user-list a{
+    border-bottom: 1px solid #e5e6e6 !important;
+}
+
+.content img{
+    border-radius: 50%;
+}
+.contenedor{
+    width: 380px !important;
+    margin-top: 60px !important;
+}
+.status{
+    color: #468669 !important;
+}
+.status.offline{
+    color: #ccc !important;
+}
+.user-list{
+    max-height: 350px !important;
+    overflow-y: auto;
+}
+.user-list::-webkit-scrollbar{
+    width: 0px;
+}
+.user-list a .content p{
+    color: #67676a;
+    font-size: 14px;
+}
+@media (min-width: 660px){
+    .contenedor{
+        width: 600px !important;
+    }
+}
+@media (min-width: 840px){
+    .contenedor{
+        width: 800px !important;
+    }
+}
+@media (min-width: 1060px){
+    .contenedor{
+        width: 1000px !important;
+    }
+}
+@media (min-width: 1240px){
+    .contenedor{
+        width: 1200px !important;
+    }
+}
+/* CHAT */
+.chat-box{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding-top: 10px;
+    overflow-y: auto;
+    height: 500px;
+    padding: 10px 30px 20px 30px;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%) , inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+.chat-box::-webkit-scrollbar{
+    width: 0px;
+}
+.chat-box .outgoing{
+    display: flex;
+}
+.chat-box .chat{
+    margin: 15px 0;
+}
+.chat-box .chat p{
+    word-wrap: break-word;
+    padding: 8px 16px;
+    box-shadow: 0 0 32px rgb(0 0 0 / 8%) , 0 16px 16px -16px rgb(0 0 0 / 10%);
+}
+.outgoing .details{
+    margin-left: auto;
+    max-width: calc(100% - 130px);
+}
+.outgoing .details p{
+    background: #333;
+    color: #fff;
+    border-radius: 18px 18px 0 18px;
+}
+.chat-box .incoming{
+    display: flex;
+    align-items: flex-end;
+}
+.chat-box .incoming img{
+    border-radius: 50%;
+}
+.incoming .details{
+    margin-left: 10px;
+    margin-right: auto;
+    max-width: calc(100% - 130px);
+}
+.incoming .details p{
+    background: white;
+    color: #333;
+    border-radius: 18px 18px 18px 0;
 }

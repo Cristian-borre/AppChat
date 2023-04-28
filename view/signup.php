@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
-<body class="vh-100 m-0 row justify-content-center align-items-center">
+<body class="m-0 row justify-content-center align-items-center">
     <div class="signup col-auto h-auto shadow-lg p-5 rounded-5">
         <div>
-            <form action="#">
+            <form action="./home">
                 <div class="head">
                     <h1 class="title text-center m-0 mb-3 p-0">Register</h1>
                 </div>

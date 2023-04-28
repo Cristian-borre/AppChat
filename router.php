@@ -8,11 +8,14 @@ $router->mount('', function() use ($router){
     $router->get('/login', function(){
         require_once('./view/login.php');
     });
-    $router->post('/entrar', function(){
-        require_once('./controller/LoginController.php');
-    });
     $router->get('/registrar', function(){
         require_once('./view/signup.php');
+    });
+    $router->get('/home', function(){
+        require_once('./view/home.php');
+    });
+    $router->get('/chat', function(){
+        require_once('./view/chat.php');
     });
 });
 $router->set404(function() {
