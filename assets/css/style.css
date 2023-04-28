@@ -1,0 +1,22 @@
+body{
+    background: #f8f8f8 !important;
+}
+.login{
+    width: 300px !important;
+    background: #fff !important;
+}
+.signup{
+    width: 350px !important;
+    background: #fff !important;
+}
+.head{
+    border-bottom: 1px solid #e5e6e6;
+}
+@media (min-width: 600px) {
+    .login{
+        width: 400px !important;
+    }
+    .signup{
+        width: auto !important;
+    }
+}
