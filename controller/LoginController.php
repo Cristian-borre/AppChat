@@ -6,7 +6,7 @@ use Core\Core;
 use Model\UsuarioModel;
 
 try{
-    
+   
 }catch(PDOException $ex){
    Core::redir("Excepcion controlada",$ex->getMessage(),'./home');
 }

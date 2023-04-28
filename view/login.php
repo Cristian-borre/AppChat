@@ -21,22 +21,23 @@
                 </div>
                 <div class="body">
                     <div class="mb-4 mt-4 form-floating">
-                        <input type="text" class="form-control" placeholder="Username" name="usuario" id="InputUsername">
+                        <input type="text" class="form-control" placeholder="Username" id="InputUsername">
                         <label for="InputUsername">Username</label>
                     </div>
                     <div class="mb-4 form-floating">
-                        <input type="password" class="form-control" placeholder="Password" name="password" id="InputPassword">
+                        <input type="password" class="form-control" placeholder="Password" id="InputPassword">
                         <label for="InputPassword">Password</label>
                     </div>
                 </div>
                 <div class="footer">
-                    <button class="btn btn-dark mb-3 fs-5 w-75 mt-3">Sign In</button>
+                    <button type="submit" class="btn btn-dark mb-3 fs-5 w-75 mt-3" >Sign In</button>
                     <p>No tienes cuenta?? <a href="./registrar">SignUp now</a></p>
                 </div>
             </form>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

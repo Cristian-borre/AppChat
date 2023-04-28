@@ -44,13 +44,14 @@
                     </div>
                 </div>
                 <div class="footer text-center">
-                    <button class=" btn btn-dark mb-3 fs-5 w-75 mt-3">Sign Up</button>
+                    <button type="submit" class=" btn btn-dark mb-3 fs-5 w-75 mt-3" >Sign Up</button>
                     <p>Ya tienes cuenta?? <a href="./login">SignIn now</a></p>
                 </div>
             </form>
         </div>
     </div>    
-
+    <script src="./assets/js/signup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
