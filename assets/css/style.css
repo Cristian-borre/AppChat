@@ -126,3 +126,6 @@ body{
     color: #333;
     border-radius: 18px 18px 18px 0;
 }
+.fs-big{
+    font-size: 5rem !important;
+}

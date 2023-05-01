@@ -37,24 +37,17 @@ const signup=async ()=>{
         })
         return;
     }
-    if(img.trim()===''){
-        Swal.fire({
-            icon:'error',
-            title:'ERROR',
-            text:'Seleccione una imagen',
-        })
-        return;
-    }
-
-    const datos = new FormData();
+    const form = document.querySelector(".signup form");
+    const datos = new FormData(form);
     datos.append("name",name);
     datos.append("lastname",lastname);
     datos.append("username",username);
     datos.append("password",password);
     datos.append("img",img);
 
-    var respuesta= await fetch("./register",{
+    var respuesta = await fetch("../controller/SignupController.php",{
         method:'POST',
+        enctype: 'multipart/form-data',
         body:datos
     })
 
@@ -65,12 +58,16 @@ const signup=async ()=>{
             icon:'success',
             title:'Exito!!',
             text:resultado.mensaje
-        })
+        }).then(function() {
+            window.location.href = resultado.url;
+        });
     }else{
         Swal.fire({
             icon:'error',
             title:'Error!!',
             text:resultado.mensaje
-        })
+        }).then(function() {
+            window.location.href = resultado.url;
+        });
     }
 }
