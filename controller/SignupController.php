@@ -30,50 +30,51 @@
                     $new_img_name = $username.$img_name;
                     $img_upload_path = '../upload/'.$new_img_name;
                     move_uploaded_file($tmp_name,$img_upload_path);
-
-                    if(isset($new_img_name)){
-                        include '../model/UsuariosModel.php';
-                        $usuarios = new UsuariosModel();
-                        $usuarios->name=$_POST['name'];
-                        $usuarios->lastname=$_POST['lastname'];
-                        $usuarios->username=$_POST['username'];
-                        $usuarios->password=password_hash($_POST['password'], PASSWORD_DEFAULT);
-                        $usuarios->img=$new_img_name;
-                        if($usuarios->AddUsuariosimg()){
-                            $valid['success'] = true;
-                            $valid['mensaje'] = "Usuario registrado correctamente!!";
-                            $valid['url']='../view/login.php';
-                        }else{
-                            $valid['success'] = false;
-                            $valid['mensaje'] = "Hubo un error al registrar el usuario!!";
-                            $valid['url']='../view/signup.php';
-                        }
-                    }else{
-                        include '../model/UsuariosModel.php';
-                        $usuarios = new UsuariosModel();
-                        $usuarios->name=$_POST['name'];
-                        $usuarios->lastname=$_POST['lastname'];
-                        $usuarios->username=$_POST['username'];
-                        $usuarios->password=password_hash($_POST['password'], PASSWORD_BCRYPT);
-                        if($usuarios->AddUsuarios()){
-                            $valid['success'] = true;
-                            $valid['mensaje'] = "Usuario registrado correctamente!!";
-                            $valid['url']='../view/login.php';
-                        }else{
-                            $valid['success'] = false;
-                            $valid['mensaje'] = "Hubo un error al registrar el usuario!!";
-                            $valid['url']='../view/signup.php';
-                        }
-                    }
                 }else{
                     $valid['success'] = false;
                     $valid['mensaje'] = "No puedes usar este tipo de archivo!!";
                     $valid['url']='../view/signup.php';
                 }
+                
             }else{
                 $valid['success'] = false;
                 $valid['mensaje'] = "Null";
                 $valid['url']='../view/signup.php';
+            }
+
+            if(isset($new_img_name)){
+                include '../model/UsuariosModel.php';
+                $usuarios = new UsuariosModel();
+                $usuarios->name=$_POST['name'];
+                $usuarios->lastname=$_POST['lastname'];
+                $usuarios->username=$_POST['username'];
+                $usuarios->password=password_hash($_POST['password'], PASSWORD_DEFAULT);
+                $usuarios->img=$new_img_name;
+                if($usuarios->AddUsuariosimg()){
+                    $valid['success'] = true;
+                    $valid['mensaje'] = "Usuario registrado correctamente!!";
+                    $valid['url']='../view/login.php';
+                }else{
+                    $valid['success'] = false;
+                    $valid['mensaje'] = "Hubo un error al registrar el usuario!!";
+                    $valid['url']='../view/signup.php';
+                }
+            }else{
+                include '../model/UsuariosModel.php';
+                $usuarios = new UsuariosModel();
+                $usuarios->name=$_POST['name'];
+                $usuarios->lastname=$_POST['lastname'];
+                $usuarios->username=$_POST['username'];
+                $usuarios->password=password_hash($_POST['password'], PASSWORD_BCRYPT);
+                if($usuarios->AddUsuarios()){
+                    $valid['success'] = true;
+                    $valid['mensaje'] = "Usuario registrado correctamente!!";
+                    $valid['url']='../view/login.php';
+                }else{
+                    $valid['success'] = false;
+                    $valid['mensaje'] = "Hubo un error al registrar el usuario!!";
+                    $valid['url']='../view/signup.php';
+                }
             }
         }
     }

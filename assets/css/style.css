@@ -39,11 +39,11 @@ body{
     width: 380px !important;
     margin-top: 60px !important;
 }
-.status{
+.status_online{
     color: #468669 !important;
 }
-.status.offline{
-    color: #ccc !important;
+.status_offline{
+    color: #aaa8a8 !important;
 }
 .user-list{
     max-height: 350px !important;
