@@ -5,8 +5,10 @@
         include '../controller/UsuariosController.php';
         include '../controller/ConversationController.php';
         include '../controller/TimeAgoController.php';
+        include '../controller/LastChats.php';
         $user = UsuariosController::GetAllUsuarios($_SESSION['username']);
         $conversations = ConversationController::GetAllConversation($user['id']);
+        
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,22 +45,22 @@
                 <?php
                     if(!empty($conversations)){ 
                         foreach($conversations as $conversation){
-                        ?>
-                        <a href="chat.php?user=<?=$conversation['username']?>" class="d-flex mt-4 justify-content-between align-items-center">
-                            <div class="content d-flex mb-2">
-                                <img src="../upload/<?=$conversation['img']?>" width="50" height="50" alt="">
-                                <div class="details">
-                                    <span class="px-2 text-black fw-semibold"><?=$conversation['name'],' ',$conversation['lastname']?></span>
-                                    <p class="px-2">Esto es una prueba</p>
+                            ?>
+                            <a href="chat.php?user=<?=$conversation['username']?>" class="d-flex mt-4 justify-content-between align-items-center">
+                                <div class="content d-flex mb-2">
+                                    <img src="../upload/<?=$conversation['img']?>" width="50" height="50" alt="">
+                                    <div class="details">
+                                        <span class="px-2 text-black fw-semibold"><?=$conversation['name'],' ',$conversation['lastname']?></span>
+                                        <p class="px-2"><?php echo LastChat($_SESSION['id'], $conversation['id']) ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <?php if(last_seen($conversation['fecha']) == 'active'){ ?>
-                                <div class="status_online mb-3 bx bxs-circle"></div>
-                            <?php }else{ ?>
-                                <div class="status_offline mb-3 bx bxs-circle"></div>
-                            <?php }?>
-                        </a>
-                <?php }
+                                <?php if(last_seen($conversation['fecha']) == 'active'){ ?>
+                                    <div class="status_online mb-3 bx bxs-circle"></div>
+                                <?php }else{ ?>
+                                    <div class="status_offline mb-3 bx bxs-circle"></div>
+                                <?php }?>
+                            </a>
+                    <?php }
                     }else{ ?>
                     <div class="alert alert-info text-center fs-4" role="alert">
                         <i class="bx bxs-message-rounded d-block fs-big"></i>

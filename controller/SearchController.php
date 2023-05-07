@@ -4,7 +4,9 @@ session_start();
 if(isset($_SESSION['username'])){
     if(isset($_POST['key'])){
         include '../core/Database.php';
+        include '../controller/LastChats.php';
         include '../controller/TimeAgoController.php';
+
         $key = "%{$_POST['key']}%";
         $sql = "SELECT * FROM usuarios WHERE username LIKE ? or name LIKE ? ORDER BY username, name ASC";
         $stmt = $con->prepare($sql);
@@ -19,7 +21,7 @@ if(isset($_SESSION['username'])){
                             <img src="../upload/<?=$user['img']?>" width="50" height="50" alt="">
                             <div class="details">
                                 <span class="px-2 text-black fw-semibold"><?=$user['name'],' ',$user['lastname']?></span>
-                                <p class="px-2">Esto es una prueba</p>
+                                <p class="px-2"><?php echo LastChat($_SESSION['id'], $user['id']) ?></p>
                             </div>
                         </div>
                         <?php if(last_seen($user['fecha']) == 'active'){ ?>

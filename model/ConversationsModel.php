@@ -12,11 +12,11 @@
                 $user_data = [];
                 foreach($conversations as $conversation){
                     if($conversation['user_1'] == $user_id){
-                        $sql2 = "SELECT name,lastname,username,img,fecha FROM usuarios WHERE id=?";
+                        $sql2 = "SELECT id,name,lastname,username,img,fecha FROM usuarios WHERE id=?";
                         $stmt2 = $con->prepare($sql2);
                         $stmt2->execute([$conversation['user_2']]);
                     }else{
-                        $sql2 = "SELECT name,lastname,username,img,fecha FROM usuarios WHERE id=?";
+                        $sql2 = "SELECT id,name,lastname,username,img,fecha FROM usuarios WHERE id=?";
                         $stmt2 = $con->prepare($sql2);
                         $stmt2->execute([$conversation['user_1']]);
                     }

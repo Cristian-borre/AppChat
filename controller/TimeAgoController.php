@@ -20,7 +20,7 @@
                 if($diff < 59 && $strTime[$i] == "second"){
                     return "active";
                 }else{
-                    return $diff . " " . $strTime[$i] . "(s) ago ";
+                    return $diff . " " . $strTime[$i] . "(s)";
                 }
         }
         

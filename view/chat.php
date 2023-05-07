@@ -6,6 +6,7 @@
         include '../controller/UsuariosController.php';
         include '../controller/ChatController.php';
         include '../controller/TimeAgoController.php';
+        include '../controller/Opened.php';
 
         if(!isset($_GET['user'])){
             header("Location: home.php");
@@ -17,6 +18,7 @@
             exit;
         }
         $Chats = GetChat($_SESSION['id'], $chat['id']);
+        opend($chat['id'],$Chats);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -44,7 +46,7 @@
                             <div class="status_online mt-1 bx bxs-circle"></div>
                         </div>
                     <?php }else{ ?>
-                        <p class="px-2"><?=$chat['fecha']?></p>
+                        <p class="px-2">Ultima vez: <?=last_seen($chat['fecha'])?></p>
                     <?php }?>
                 </div>
             </header>
@@ -105,6 +107,20 @@
                             scrollDown();
                         })
             })
+
+            let fechData = function(){
+                $.post("../controller/GetMessage.php",
+                {
+                    id_2: <?=$chat['id']?>
+                },
+                function(data,status){
+                    $("#chat-box").append(data);
+                    if(data != "") scrollDown();
+                })
+            }
+            fechData();
+            setInterval(fechData, 500);
+            
         })
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
